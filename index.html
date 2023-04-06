@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="calculator.js"></script>
+    <title>Calculator</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: none;
+            margin: none;
+            box-sizing: border-box;
+        }
+
+        p {
+            margin-block: none;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: baseline;
+            align-items: start;
+            gap: 20px;
+        }
+
+        section {
+            display: flex;
+            flex-direction: row;
+            justify-content:space-between;
+            gap: 10px;
+            align-items:center;
+        }
+
+        input:focus {
+            outline: thin;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Calculate expression
+    </h1>
+    <section>
+        <div>
+            <label for="expression">Insert expression</label>
+            <label for="result">Result</label>
+        </div>
+        <div>
+            <input id="expression" type="text" onblur="calculate()">
+            <p></p>
+        </div>
+    </section>
+</body>
+</html>
