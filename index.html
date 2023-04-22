@@ -12,50 +12,151 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 20px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            gap: 50px;
+            --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: var(--font);
             padding: none;
             margin: none;
             box-sizing: border-box;
         }
 
         p {
-            margin-block: none;
+            margin: 0px !important;
         }
 
         div {
             display: flex;
-            flex-direction: column;
-            justify-content: baseline;
-            align-items: start;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
             gap: 20px;
         }
 
         section {
             display: flex;
-            flex-direction: row;
-            justify-content:space-between;
-            gap: 10px;
-            align-items:center;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        section#firstpart div:nth-child(2) {
+            gap:90px
+        }
+
+        label, p, input, button {
+            font-size: 14px;
+        }
+
+        input {
+            padding: 2px;
         }
 
         input:focus {
             outline: thin;
         }
+
+        button {
+            background-color: white;
+            border: thin solid;
+            border-radius: 3px;
+            padding: 2px;
+            font-family: var(--font)
+        }
+
+        button:hover {
+            scale: 1.1;
+            cursor: pointer;
+        }
+
+        section#secondpart, .calculator {
+            gap: 0;
+        }
+
+        .buttons {
+            height: 30px;
+            width: 20px;
+            font-size: 16px;
+            padding: 30px;
+            background-color: beige;
+            outline: thin solid;
+            text-align: center;
+        }
+
+        .buttons:hover {
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .buttonsbig {
+            height: 30px;
+            width: 40px;
+            font-size: 16px;
+            padding: 30px 60px;
+            background-color: beige;
+            outline: thin solid;
+            text-align: center;
+        }
+
+        .buttonsbig:hover {
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .calculator {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        }
     </style>
+
 </head>
 <body>
     <h1>
         Calculate expression
     </h1>
-    <section>
+    <section id="firstpart">
         <div>
             <label for="expression">Insert expression</label>
-            <label for="result">Result</label>
+            <input id="expression" type="text" onblur="calculatorOne()">
+            <button>calculate</button>
         </div>
         <div>
-            <input id="expression" type="text" onblur="calculate()">
-            <p></p>
+            <label for="result">Result</label>
+            <p>-</p>
+        </div>
+    </section>
+    <section id="secondpart">
+        <div data-previous-operand></div>
+        <div data-current-operand></div>
+        <div class="calculator">
+            <p data-all-clear class="buttonsbig">AC</p>
+            <p data-delete class="buttonsbig">DEL</p>
+        </div>
+        <div class="calculator">
+            <p data-number class="buttons">7</p>
+            <p data-number class="buttons">8</p>
+            <p data-number class="buttons">9</p>
+            <p data-operation class="buttons">÷</p>
+        </div>
+        <div class="calculator">
+            <p data-number class="buttons">4</p>
+            <p data-number class="buttons">5</p>
+            <p data-number class="buttons">6</p>
+            <p data-operation class="buttons">x</p>
+        </div>
+        <div class="calculator">
+            <p data-number class="buttons">1</p>
+            <p data-number class="buttons">2</p>
+            <p data-number class="buttons">3</p>
+            <p data-operation class="buttons">-</p>
+        </div>
+        <div class="calculator">
+            <p data-number class="buttons">0</p>
+            <p data-number class="buttons">.</p>
+            <p data-equals class="buttons">=</p>
+            <p data-operation class="buttons">+</p>
         </div>
     </section>
 </body>
