@@ -12,7 +12,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 50px;
+            gap: 20px;
             --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-family: var(--font);
             padding: none;
@@ -22,6 +22,10 @@
 
         p {
             margin: 0px !important;
+        }
+
+        h2 {
+            text-align: center;
         }
 
         div {
@@ -35,10 +39,10 @@
         section {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
         }
 
-        section#firstpart div:nth-child(2) {
+        section#firstpart div:nth-child(3) {
             gap:90px
         }
 
@@ -117,6 +121,7 @@
         Calculate expression
     </h1>
     <section id="firstpart">
+        <h2>Write expression</h2>
         <div>
             <label for="expression">Insert expression</label>
             <input id="expression" type="text" onblur="calculatorOne()">
@@ -128,6 +133,7 @@
         </div>
     </section>
     <section id="secondpart">
+        <h2>Click expression</h2>
         <div class="calculator">
             <p onclick="clearDisplay()" class="buttonsbig">AC</p>
             <p onclick="deleteDigit()" class="buttonsbig">DEL</p>
