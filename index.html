@@ -128,35 +128,33 @@
         </div>
     </section>
     <section id="secondpart">
-        <div data-previous-operand></div>
-        <div data-current-operand></div>
         <div class="calculator">
-            <p data-all-clear class="buttonsbig">AC</p>
-            <p data-delete class="buttonsbig">DEL</p>
+            <p onclick="clearDisplay()" class="buttonsbig">AC</p>
+            <p onclick="deleteDigit()" class="buttonsbig">DEL</p>
         </div>
         <div class="calculator">
-            <p data-number class="buttons">7</p>
-            <p data-number class="buttons">8</p>
-            <p data-number class="buttons">9</p>
-            <p data-operation class="buttons">÷</p>
+            <p onclick="appendDigit('7')" class="buttons">7</p>
+            <p onclick="appendDigit('8')" class="buttons">8</p>
+            <p onclick="appendDigit('9')" class="buttons">9</p>
+            <p onclick="compute('/')" class="buttons">÷</p>
         </div>
         <div class="calculator">
-            <p data-number class="buttons">4</p>
-            <p data-number class="buttons">5</p>
-            <p data-number class="buttons">6</p>
-            <p data-operation class="buttons">x</p>
+            <p onclick="appendDigit('4')" class="buttons">4</p>
+            <p onclick="appendDigit('5')" class="buttons">5</p>
+            <p onclick="appendDigit('6')" class="buttons">6</p>
+            <p onclick="compute('*')" class="buttons">x</p>
         </div>
         <div class="calculator">
-            <p data-number class="buttons">1</p>
-            <p data-number class="buttons">2</p>
-            <p data-number class="buttons">3</p>
-            <p data-operation class="buttons">-</p>
+            <p onclick="appendDigit('1')" class="buttons">1</p>
+            <p onclick="appendDigit('2')" class="buttons">2</p>
+            <p onclick="appendDigit('3')" class="buttons">3</p>
+            <p onclick="compute('-')" class="buttons">-</p>
         </div>
         <div class="calculator">
-            <p data-number class="buttons">0</p>
-            <p data-number class="buttons">.</p>
-            <p data-equals class="buttons">=</p>
-            <p data-operation class="buttons">+</p>
+            <p onclick="appendDigit('0')" class="buttons">0</p>
+            <p onclick="appendDigit('.')" class="buttons">.</p>
+            <p onclick="compute('=')" class="buttons">=</p>
+            <p onclick="compute('+')" class="buttons">+</p>
         </div>
     </section>
 </body>
